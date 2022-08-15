@@ -8,7 +8,7 @@ import { BUSINESS_DETAILS } from 'constants/route-constants'
 const DoneRegistration = () => {
   const navigate = useNavigate()
 
-  return <CardContainer raised rounded style={{ width: '400px', margin: 'auto' }}>
+  return <CardContainer raised rounded className='done-registration-container'>
       <div>
         <h2>Thank you for trading with us!</h2>
         <p>Your application has been submitted for review.</p>

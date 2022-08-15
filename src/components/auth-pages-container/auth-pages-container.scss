@@ -1,3 +1,6 @@
+@import 'styles/variables';
+@import 'styles/mixins';
+
 .auth-container{
   max-width: 450px;
   padding: 20px 100px;
@@ -13,5 +16,12 @@
   span:last-child {
     cursor: pointer;
     margin: 10px 0;
+  }
+}
+
+@include respond-to('mobile-down') {
+  .auth-container{
+    max-width: unset;
+    padding: $mobile-padding 20px;
   }
 }

@@ -1,0 +1,14 @@
+@import 'styles/mixins';
+
+
+.done-registration-container {
+  width: 400px;
+  margin: auto;
+}
+
+@include respond-to('mobile-down') {
+  .done-registration-container {
+    width: calc( 100vw - 40px);
+    margin: auto;
+  }
+}

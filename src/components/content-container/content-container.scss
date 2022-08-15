@@ -1,4 +1,5 @@
 @import 'styles/variables';
+@import 'styles/mixins';
 
 .content-container {
   height: 100%;
@@ -8,5 +9,18 @@
 
   &.open {
     width: calc(100% - $sidenav-width);
+  }
+}
+
+@include respond-to('mobile-down') {
+  .content-container {
+    height: 100%;
+    width: 100%;
+    padding: $mobile-padding;
+    transition: width 500ms;
+  
+    &.open {
+      width: 100%;
+    }
   }
 }

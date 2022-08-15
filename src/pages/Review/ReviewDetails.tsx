@@ -3,22 +3,24 @@ import { useNavigate } from 'react-router'
 
 import CardContainer from 'components/common/card-container/CardContainer'
 import Button from 'components/common/button/Button'
+import ImageUploader from 'components/common/image-uploader/ImageUploader'
 import useUserData from 'hooks/useUserData'
 import { DONE_REGISTRATION } from 'constants/route-constants'
 import { SUBMIT_APPLICATION } from 'constants/user-actions'
-import ImageUploader from 'components/common/image-uploader/ImageUploader'
+
+import './review.scss'
 
 const SectionContainer = ({ title, children }: {title: string, children: any}) => {
   return <div>
     <h4>{title}</h4>
-    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', margin: '30px 0' }}>
+    <div className='review-section'>
       {children}
     </div>
   </div>
 }
 
 const DisplayInfo = ({ label, value }: {label: string, value: any}) => {
-  return <div style={{ margin: '10px 0' }}><span>{`${label}: `}</span>{value}</div>
+  return <div className='review-info'><span>{`${label}: `}</span>{value}</div>
 }
 
 const ReviewDetails = () => {
@@ -31,7 +33,7 @@ const ReviewDetails = () => {
     navigate(DONE_REGISTRATION)
   }
 
-  return <CardContainer rounded raised title={ <h3>Review</h3> }>
+  return <CardContainer rounded raised title={ <h3>Review</h3> } className='review-container'>
     <SectionContainer title='Business Details'>
       <DisplayInfo label='Company Name' value={businessData.companyName} />
       <DisplayInfo label='Trading Name' value={businessData.tradingName} />
