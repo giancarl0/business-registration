@@ -1,0 +1,12 @@
+@import 'styles/variables';
+
+.content-container {
+  height: 100%;
+  width: 100%;
+  transition: width 500ms;
+  padding: 50px 100px;
+
+  &.open {
+    width: calc(100% - $sidenav-width);
+  }
+}

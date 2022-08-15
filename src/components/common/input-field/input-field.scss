@@ -1,0 +1,36 @@
+@import 'styles/variables';
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 300px;
+  margin: 10px 0px;
+  margin-bottom: 20px;
+  position: relative;
+
+  &.full-width {
+    max-width: unset;
+    width: 100%;
+  }
+
+  span {
+    margin-bottom: 5px;
+  }
+
+  input, select {
+    border-radius: 5px;
+    height: 30px;
+    padding: 5px;
+
+    &:disabled {
+      color: $dark-white;
+    }
+  }
+
+  .error-message {
+    color: $error;
+    position: absolute;
+    bottom: -30px;
+    left: 10px;
+  }
+}

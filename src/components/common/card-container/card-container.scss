@@ -1,0 +1,55 @@
+@import 'styles/variables';
+
+@mixin raised($variant) {
+  @if $variant == 'secondary' {
+    box-shadow: 0px 0px 10px 1px $secondary;
+    -webkit-box-shadow: 0px 0px 10px 1px $secondary;
+    -moz-box-shadow: 0px 0px 10px 1px $secondary;
+  } @else {
+    box-shadow: 0px 0px 10px 1px $primary;
+    -webkit-box-shadow: 0px 0px 10px 1px $primary;
+    -moz-box-shadow: 0px 0px 10px 1px $primary;
+  }
+}
+
+.card-container {
+  padding: $padding;
+  background-color: $fg;
+
+  &.rounded {
+    border-radius: $border-radius;
+  }
+
+  &.outlined {
+    border: 1px solid $fg-light;
+  }
+
+  &.raised {
+    @include raised('primary');
+  }
+
+  &.inverted {
+    background-color: $white;
+    color: $fg;
+
+    &.raised {
+      @include raised('primary');
+      &.secondary {
+        @include raised('secondary');
+      }
+    }
+  }
+
+  &.secondary {
+    @include raised('secondary');
+  }
+}
+
+.card-container-title {
+  h1, h2, h3, h4, h5 {
+    margin-top: 0;
+    font-weight: lighter;
+  }
+  margin-bottom: 20px;
+  border-bottom: 1px solid $dark-white;
+}

@@ -1,0 +1,24 @@
+@import 'styles/variables';
+@import 'styles/mixins';
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: $header-height;
+  background-color: $fg-dark;
+  padding: 0 $padding;
+}
+
+.logo-container {
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@include respond-to('mobile-down') {
+  .header {
+    padding: 0 $mobile-padding;
+  }
+}

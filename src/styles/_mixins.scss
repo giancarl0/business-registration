@@ -1,0 +1,9 @@
+
+
+@mixin respond-to($device) {
+  @if $device == 'mobile-down' {
+    @media only screen and (max-width: 767px) {
+      @content
+    }
+  }
+}

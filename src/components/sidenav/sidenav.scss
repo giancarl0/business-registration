@@ -1,0 +1,47 @@
+@import 'styles/variables';
+@import 'styles/mixins';
+
+.sidenav {
+  position: absolute;
+  background: linear-gradient(90deg, $fg-dark 0%, $fg-light 20%);
+  right: 0;
+  width: 0;
+  height: calc(100% - $header-height);
+  overflow: hidden;
+  transition: width 500ms;
+  &.open {
+    width: $sidenav-width;
+  }
+}
+
+.sidenav-contents {
+  padding: $padding;
+  padding-left: 80px;
+  padding-bottom: 70px;
+  height: 100%;
+  display: block;
+  overflow-y: auto;
+  overflow-x: hidden;
+  transition: 300ms;
+}
+
+.logout-button {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: 30px;
+  right: 100px;
+}
+
+@include respond-to('mobile-down') {
+  .sidenav {
+    background: $fg-light;
+    &.open {
+      width: 100vw;
+    }
+  }
+  
+  .sidenav-contents {
+    padding: $mobile-padding;
+  }
+}

@@ -1,0 +1,42 @@
+@import 'styles/variables';
+
+.button {
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+
+  &.full-width {
+    width: 100%;
+  }
+
+  &:hover {
+    background-color: $fg-light;
+    color: $dark-white;
+  }
+
+  &.primary {
+    background-color: $primary;
+    &:hover {
+      background-color: $primary-dark;
+    }
+  }
+
+  &.secondary {
+    background-color: $secondary;
+    &:hover {
+      background-color: $secondary-dark;
+    }
+  }
+
+  &:disabled {
+    background-color: gray;
+    color: $dark-white;
+    &:hover {
+      background-color:gray;
+      color: $dark-white;
+    }
+    cursor:not-allowed;
+  }
+
+  transition: all 500ms;
+}
